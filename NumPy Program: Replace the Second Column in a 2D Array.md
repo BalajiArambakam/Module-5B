@@ -1,28 +1,31 @@
-# # NumPy Program: Find Indices Where Elements in Array x are Greater Than or Equal to Corresponding Elements in Array y
+# NumPy Program: Replace the Second Column in a 2D Array
 
 ## 🎯 Aim
-To write a Python program using **NumPy** that finds the indices where elements in array `x` are greater than or equal to their corresponding elements in array `y`.
+To write a **NumPy** program that deletes the second column from a given 2D array and inserts a new column at the same position.
 
 ## 🧠 Algorithm
-1. **Import NumPy**: Import the NumPy library.
-2. **Define Arrays**: Define two NumPy arrays, `x` and `y`, with the same shape (i.e., same number of elements).
-3. **Use Boolean Indexing**: 
-   - `x > y` gives a boolean array where elements of `x` are greater than `y`.
-   - `x == y` gives a boolean array where elements of `x` are equal to `y`.
-4. **Find Indices**: Use `np.where()` to get the indices where the conditions `x >= y` are satisfied.
-5. **Print Indices**: Print the indices where the condition holds true.
+1. **Import NumPy**: Start by importing the NumPy library.
+2. **Get Input**: Get a 2D NumPy array and a new column (as another array) from the user.
+3. **Delete Column**: Use `np.delete()` to remove the second column (index 1) from the original array.
+4. **Insert Column**: Use `np.insert()` to insert the new column at the second column's original position.
+5. **Display Result**: Print the updated array with the replaced column.
 
 ## 🧾 Program
-
 ```
 import numpy as np
-x = np.array([5, 8, 2, 9, 6])
-indices = np.where(x >= y)
-y = np.array([3, 8, 4, 7, 6])
-print("Array x:", x) print("Array y:", y) print("Indices where x >= y:", indices[0])
+
+arr = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+
+new_col = np.array([10, 11, 12])
+
+arr_modified = np.delete(arr, 1, axis=1)
+
+arr_updated = np.insert(arr_modified, 1, new_col, axis=1)
+
+print("Updated Array:\n", arr_updated)
 ```
 ## Output
-![439805383-e4b4a900-ec3f-49eb-b501-0dd4f70ccd96](https://github.com/user-attachments/assets/bd51e82a-79df-464f-aee4-eb97ac09eb09)
+![439805763-4c131933-f724-4451-8506-f623b110c87c](https://github.com/user-attachments/assets/13ff986e-fb8e-452b-973e-b15a847b7760)
 
 ## Result
 Thus the program has been successfully executed.
